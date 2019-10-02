@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+.tud
+	{
+		position: absolute;
+		top: 120px;
+		left:1050px;
+	}
+.bunsen
+    {
+        position: absolute;
+        top: 480px;
+        left:1025px;
+    }
+.terenure
+    {
+        position: absolute;
+        top: 320px;
+		left:1040px;
+	}  
+table, th, td 
+	{
+	  border: 1px solid black;
+	  border-collapse: collapse;
+	}
+*{
+  box-sizing: border-box;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container 
+{
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides 
+{
+  display: none;
+  width: 100%;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor 
+{
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next 
+{
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next 
+{
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover 
+{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext 
+{
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo 
+{
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover 
+{
+  opacity: 1;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+		
+			<div class="mySlides">
+				<div class="numbertext">1 / 3</div>
+					<img src="selfie.jpg" style="width:100%" alt="Avatar">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">2 / 3</div>
+					<img src="selfie1.jpg" style="width:100%" alt="Avatar">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">3 / 3</div>
+					<img src="selfie2.jpg" style="width:100%" alt="Avatar">
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			<div class="row">
+				<div class="column">
+					<img class="demo cursor" src="selfie.jpg" style="width:100%" onclick="currentSlide(1)">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="selfie1.jpg" style="width:100%" onclick="currentSlide(2)">
+				</div>
+				<div class="column">
+					<img class="demo cursor" src="selfie2.jpg" style="width:100%" onclick="currentSlide(3)">
+				</div>
+			</div>
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) 
+			{
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) 
+			{
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) 
+			{
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  var captionText = document.getElementById("caption");
+			  if (n > slides.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " active";
+			  captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+		</script>
+          
+          <div class="w3-display-bottomleft w3-container w3-text-white">
+            <h2>Scott Donnelly</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Computer Science Student</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Dublin, Ireland</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>C17325426@mytudublin.ie</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+353 - 852830975</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="w3-text-teal"></i>Skills</b></p>
+          <p>C/C++</p>
+          <p>Python</p>
+          <p>Java</p>
+          <p>CCNA networking</p>
+          <p>Understanding of algoritms concepts</p>
+          <p>Experience in every OS</p>
+          <br>
+        </div>
+        <div class="w3-container">
+        <table style="width:100%">
+          <tr>
+            <th>Modules</th>
+            <th>Year Completed</th> 
+            <th>Grade</th>
+          </tr>
+          <tr>
+            <td>Programming</td>
+            <td>2018</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Intro to OS</td>
+            <td>2018</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Networking</td>
+            <td>2018</td>
+            <td>B</td>
+          </tr>
+        </table>
+      </div><br>
+    <!-- End Left Column -->
+    </div>
+      </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+		  <div class="w3-container w3-card w3-white w3-margin-bottom">
+				<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+			<div class="tud">
+				<a href="http://www.dit.ie"><img src="TUDublin.png" style="width: 45%" title="TUDublin" alt="TUDublin"></a>
+				<p id="demo"></p>
+				<script>
+				var myVar = setInterval(myTimer, 3000);
+
+				function myTimer() 
+				{
+				  var d = new Date();
+				  var t = d.toLocaleTimeString();
+				  document.getElementById("demo").innerHTML = t;
+				}
+				</script>
+			</div>
+			<div class="w3-container">
+				<h5 class="w3-opacity"><b>Technological University Dublin</b></h5>
+				<h6 class="w3-text-teal"><i>2017 - 2021</i></h6>
+				<p>DT211c / Computer Science (Infrastructure)<br>
+					Undergraduate Bachelor of Science.
+				</p>
+				<hr>
+			</div>
+			<div class="w3-container">
+				<h5 class="w3-opacity"><b>Terenure College</b></h5>
+				<h6 class="w3-text-teal"><i>2011- 2017</i></h6>
+				<div class="terenure">
+					<a href="https://www.terenurecollege.ie"><img src="terenure.png" style="width: 60%" title="Terenure College" alt="Terenure College"></a>
+				</div>
+				<p>Leaving Certificate</p>
+				<hr>
+			</div>
+		<div class="w3-container w3-card w3-white">
+			<h2 class="w3-text-grey w3-padding-16"><i class="w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+			<div class="bunsen">
+				<a href="https://www.bunsen.ie"><img src="bunsen.png" style="width: 60%" title="Bunsen" alt="Bunsen"></a>
+			</div>
+			<div class="w3-container">
+				<h5 class="w3-opacity"><b>Front of House Supervisor / Bunsen Wexford Street</b></h5>
+				<h6 class="w3-text-teal"><i>Jan 2019 - </i><span class="w3-tag w3-teal w3-round">Current</span></h6>
+					<p>This role includes: <br>
+					•	Taking customer orders, maintaining the health and safety and food standards in the restaurant and making sure that other staff are fulfilling their roles correctly.<br>
+					•	Working in a team to ensure a high-quality service.<br>
+					•	Cashing up at night and being responsible for the weekly reports and corresponding with managers to achieve targets and goals.<br>
+					•	Dealing with any customer complaints or any high-pressure situations in a calm and collected manner and finding the best possible solution to make all parties happy.<br>
+					</p>
+					<hr>
+			</div>
+			<div class="w3-container">	
+				<h2 class="w3-text-grey w3-padding-16"><i class="w3-xxlarge w3-text-teal"></i>Past Projects</h2>
+				<h5 class="w3-opacity"><b>Simple Search Engine (Java)</b></h5>
+				<p>This project involved: <br>
+				•  Made a program that could parse through multiple text files. <br>
+				•  The program was able to find and count the instances of any searchword. <br>
+				•  The program had a dedicated GUI to allow for ease of use.	<br>
+				•  Has sophisticated searching to find parts of words<br>
+				</p>
+				<hr>
+			</div>
+		</div>
+			<div class="w3-container">
+			<h2 class="w3-text-grey w3-padding-16"><i class=" w3-xxlarge w3-text-teal"></i>Questions about me</h2>
+					<p>What is your favourite area of computer science?</p>
+					<hr>
+			</div>
+		<!-- End Right Column -->
+		</div>
+	  <!-- End Grid -->
+		<br>
+		</div>
+	  
+	  <!-- End Page Container -->
+	</div>
+</div>
+
+</body>
+</html>
